@@ -12,4 +12,5 @@
         android:layout_height="wrap_content"
         android:text="Fragment Text"
         android:textSize="30sp" />
+
 </LinearLayout>

@@ -12,6 +12,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         LittleFragment littleFragment = new LittleFragment();
+
+        Bundle args = new Bundle();
+        args.putString("argText", "little text ");
+        args.putInt("argNumber", 123);
+        littleFragment.setArguments(args);
+
         getSupportFragmentManager().beginTransaction().replace(R.id.container1, littleFragment)
                 .commit();
     }
