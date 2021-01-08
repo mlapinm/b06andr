@@ -11,14 +11,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        LittleFragment littleFragment = new LittleFragment();
+        LittleFragment littleFragment = LittleFragment
+                .newInstance("little text ", 1234);
 
-        Bundle args = new Bundle();
-        args.putString("argText", "little text ");
-        args.putInt("argNumber", 123);
-        littleFragment.setArguments(args);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.container1, littleFragment)
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container1, littleFragment)
                 .commit();
     }
 }
