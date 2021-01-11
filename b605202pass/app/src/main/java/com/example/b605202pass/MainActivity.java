@@ -1,5 +1,6 @@
 package com.example.b605202pass;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -28,5 +29,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("count", count);
 
         startActivity(intent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }
