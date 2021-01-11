@@ -1,4 +1,4 @@
-package com.example.freon.b605201acti;
+package com.example.b605201acti;
 
 import org.junit.Test;
 

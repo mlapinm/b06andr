@@ -1,4 +1,4 @@
-package com.example.freon.b605201acti;
+package com.example.b605201acti;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                openActivity();
+            public void onClick(View v) {
+                openSecondActivity();
             }
         });
     }
 
-    private void openActivity() {
+    private void openSecondActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
