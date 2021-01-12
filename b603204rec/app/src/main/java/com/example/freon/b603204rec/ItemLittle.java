@@ -22,4 +22,8 @@ public class ItemLittle {
     public String getmText2() {
         return mText2;
     }
+
+    public void setmText1(String mText1) {
+        this.mText1 = mText1;
+    }
 }

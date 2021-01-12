@@ -14,18 +14,38 @@ import java.util.ArrayList;
 public class AdapterLittle extends RecyclerView.Adapter<AdapterLittle.ViewHolderLittle> {
 
     private ArrayList <ItemLittle> itemLittles;
+    public OnItemClickListener onItemClickListener;
 
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener){
+        this.onItemClickListener = onItemClickListener;
+    }
 
     public static class ViewHolderLittle extends RecyclerView.ViewHolder {
         public ImageView mImageView;
         public TextView mTextview1;
         public TextView mTextview2;
 
-        public ViewHolderLittle(@NonNull View itemView) {
+        public ViewHolderLittle(@NonNull View itemView, OnItemClickListener onItemClickListener) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.imageView);
             mTextview1 = itemView.findViewById(R.id.textView);
             mTextview2 = itemView.findViewById(R.id.textView2);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(onItemClickListener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            onItemClickListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -38,7 +58,7 @@ public class AdapterLittle extends RecyclerView.Adapter<AdapterLittle.ViewHolder
     public ViewHolderLittle onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.layout_item, parent, false);
-        ViewHolderLittle vhl = new ViewHolderLittle(v);
+        ViewHolderLittle vhl = new ViewHolderLittle(v, onItemClickListener);
         return vhl;
     }
 
@@ -55,4 +75,5 @@ public class AdapterLittle extends RecyclerView.Adapter<AdapterLittle.ViewHolder
     public int getItemCount() {
         return itemLittles.size();
     }
+
 }
