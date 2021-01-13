@@ -19,14 +19,14 @@ public class SecondActivity extends AppCompatActivity {
 
         textView1 = findViewById(R.id.textViewSecond1);
         textView2 = findViewById(R.id.textViewSecond2);
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.imageView2);
 
         Intent intent = getIntent();
         String text1, text2;
         int icon = intent.getIntExtra(MainActivity.EXTRA_ICON, 0);
         text1 = intent.getStringExtra(MainActivity.EXTRA_TEXT1);
         text2 = intent.getStringExtra(MainActivity.EXTRA_TEXT2);
-//        imageView.setImageResource(icon);
+        imageView.setImageResource(icon);
         textView1.setText(text1);
         textView2.setText(text2);
 

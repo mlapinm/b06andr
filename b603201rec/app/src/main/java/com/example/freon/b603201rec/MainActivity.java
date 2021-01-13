@@ -30,5 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new AdapterLittle(itemLittles);
         mRecyclerView.setAdapter(mAdapter);
 
+
+
     }
 }

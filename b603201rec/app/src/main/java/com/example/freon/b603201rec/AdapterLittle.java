@@ -55,4 +55,6 @@ public class AdapterLittle extends RecyclerView.Adapter<AdapterLittle.ViewHolder
     public int getItemCount() {
         return itemLittles.size();
     }
+
+
 }
