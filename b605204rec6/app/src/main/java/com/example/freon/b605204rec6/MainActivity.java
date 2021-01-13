@@ -1,7 +1,6 @@
-package com.example.freon.b603204rec;
+package com.example.freon.b605204rec6;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -13,9 +12,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String EXTRA_TEXT1 = "text1";
-    public static String EXTRA_TEXT2 = "text2";
-    public static String EXTRA_ICON = "icon";
+    public static String EXTRA_ITEM_LITTLE = "EXTRA_ITEM_LITTLE";
+
 
 
     private RecyclerView mRecyclerView;
@@ -43,21 +41,15 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new AdapterLittle.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Toast.makeText(MainActivity.this, "Position: " + position, Toast.LENGTH_SHORT).show();
-//                itemLittles.get(position).setmText1("checked");
-//                mAdapter.notifyItemChanged(position);
                 startNewActivity(position);
             }
         });
     }
     public void startNewActivity(int position){
         Intent intent = new Intent(this, SecondActivity.class);
-        int icon = itemLittles.get(position).getmImageResource();
-        Toast.makeText(this, "" + icon, Toast.LENGTH_SHORT).show();
-        intent.putExtra(EXTRA_ICON, icon);
-        intent.putExtra(EXTRA_TEXT1, itemLittles.get(position).getmText1().toString());
-        intent.putExtra(EXTRA_TEXT2, itemLittles.get(position).getmText2().toString());
-        startActivity(intent);
 
+        ItemLittle itemLittle = itemLittles.get(position);
+        intent.putExtra(EXTRA_ITEM_LITTLE, itemLittle);
+        startActivity(intent);
     }
 }
