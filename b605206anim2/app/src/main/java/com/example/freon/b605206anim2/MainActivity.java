@@ -27,5 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private void startNewActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_out_left, R.anim.slide_in_right);
     }
 }

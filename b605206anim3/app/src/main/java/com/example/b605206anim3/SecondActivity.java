@@ -1,11 +1,11 @@
-package com.example.freon.b605206anim2;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.b605206anim3;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
     Button button;
@@ -32,6 +32,5 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_left);
     }
 }
