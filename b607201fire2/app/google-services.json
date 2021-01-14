@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "250790499231",
+    "project_id": "b607201fire2",
+    "storage_bucket": "b607201fire2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250790499231:android:cfed61796600160dd9e3aa",
+        "android_client_info": {
+          "package_name": "com.example.freon.b607201fire2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250790499231-aeteca0dbpt81lbpfns3vn5vkrnmvso3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjtsylID_uD4D1JdgBfrp1ILnJxzLpAaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250790499231-aeteca0dbpt81lbpfns3vn5vkrnmvso3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
