@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="8dp">
+
+    <ImageView
+        android:id="@+id/imageView_flag"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        tools:src="@drawable/flag_afghanistan" />
+
+    <TextView
+        android:id="@+id/text_view_name2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Afghanistan"
+        android:textSize="24sp" />
+</LinearLayout>
