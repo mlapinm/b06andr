@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.session.MediaSession;
 import android.os.Bundle;
+import android.support.v4.media.session.MediaSessionCompat;
 import android.view.View;
 import android.widget.EditText;
 
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextTitle;
     private EditText editTextMessage;
 
+    private MediaSessionCompat mediaSession;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         editTextTitle = findViewById(R.id.editTextTitle);
         editTextMessage = findViewById(R.id.editTextMessage);
+
+        mediaSession = new MediaSessionCompat(this, "tag");
     }
 
     public void onClickButton1(View view) {
@@ -42,31 +48,23 @@ public class MainActivity extends AppCompatActivity {
         Intent activityIntent = new Intent(this, MainActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, activityIntent, 0);
 
-        Intent broadcastIntent = new Intent(this, NotificationReceiver.class);
-        broadcastIntent.putExtra("toastMessage", message);
-        PendingIntent actionIntent = PendingIntent.getBroadcast(this,
-                0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Bitmap largeicon = BitmapFactory.decodeResource(getResources(), R.drawable.img_ride);
+        Bitmap picture = BitmapFactory.decodeResource(getResources(), R.drawable.img_ride);
 
         Notification notification = new
                 NotificationCompat.Builder(this, CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.ic_channel_1_24)
                 .setContentTitle(title)
                 .setContentText(message)
-                .setLargeIcon(largeicon)
-                .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText(getString(R.string.long_dummy_text))
-                        .setBigContentTitle("Big content title")
-                        .setSummaryText("Summary Text")
-                )
+                .setLargeIcon(picture)
+                .setStyle(new NotificationCompat.BigPictureStyle()
+                        .bigPicture(picture)
+                        .bigLargeIcon(null))
                 .setPriority(Notification.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-                .setColor(Color.BLUE)
                 .setContentIntent(contentIntent)
                 .setAutoCancel(true)
                 .setOnlyAlertOnce(true)
-                .addAction(R.drawable.ic_channel_1_24, "Toast", actionIntent)
                 .build();
 
         notificationManager.notify(1, notification);
@@ -76,21 +74,25 @@ public class MainActivity extends AppCompatActivity {
         String title = editTextTitle.getText().toString();
         String message = editTextMessage.getText().toString();
 
+        Bitmap artwork = BitmapFactory.decodeResource(getResources(), R.drawable.img_ride);
+
+
         Notification notification = new
                 NotificationCompat.Builder(this, CHANNEL_2_ID)
                 .setSmallIcon(R.drawable.ic_channel_2_24)
                 .setContentTitle(title)
                 .setContentText(message)
-                .setStyle(new NotificationCompat.InboxStyle()
-                        .addLine("This is line 1")
-                        .addLine("This is line 2")
-                        .addLine("This is line 3")
-                        .addLine("This is line 4")
-                        .addLine("This is line 5")
-                        .addLine("This is line 6")
-                        .setBigContentTitle("Big content title")
-                        .setSummaryText("Summary Text")
-                )
+                .setLargeIcon(artwork)
+                .addAction(R.drawable.img_pavlin, "Dislike", null)
+                .addAction(R.drawable.ic_channel_1_24, "Previous", null)
+                .addAction(R.drawable.ic_channel_2_24, "Pause", null)
+                .addAction(R.drawable.img_pavlin, "Next", null)
+                .addAction(R.drawable.img_pavlin, "Like", null)
+
+                .setStyle(new androidx.media.app.NotificationCompat.MediaStyle()
+                        .setShowActionsInCompactView(1, 2, 3)
+                        .setMediaSession(mediaSession.getSessionToken()))
+                .setSubText("Sub Text")
                 .setPriority(Notification.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
