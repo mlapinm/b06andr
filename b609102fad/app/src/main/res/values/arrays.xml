@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="little_one">
+        <item>This</item>
+        <item>is</item>
+        <item>little 1</item>
+    </string-array>
+</resources>
