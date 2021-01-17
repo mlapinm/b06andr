@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:orientation="vertical"
+    tools:context=".Activity2">
+
+    <ImageView
+        android:id="@+id/image_activity_2"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:scaleType="centerCrop"
+        android:transitionName="little_transition"
+        app:srcCompat="@drawable/img_hours"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="125dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eos aliquam numquam nobis in molestiae similique temporibus iure laudantium laborum, dolor placeat molestias soluta porro maiores ea saepe doloremque possimus!" />
+</LinearLayout>
