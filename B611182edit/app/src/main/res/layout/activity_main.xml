@@ -13,7 +13,6 @@
         android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:hint="username"
         android:inputType="textPersonName"
         android:textSize="28dp" />
@@ -23,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="password"
-        android:imeOptions="actionPrevious"
+        android:imeOptions="actionSend"
         android:inputType="textVisiblePassword"
         android:textSize="28dp" />
 
