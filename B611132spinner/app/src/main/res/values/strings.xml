@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">B611132spinner</string>
+
+    <string-array name="array">
+        <item>one</item>
+        <item>two</item>
+        <item>three</item>
+        <item>five</item>
+        <item>six</item>
+    </string-array>
+</resources>
