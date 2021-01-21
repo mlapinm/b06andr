@@ -6,36 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:text="Hello World!"
-        app:autoSizeTextType="uniform"
-        app:autoSizeMaxTextSize="100sp"
-        app:autoSizeMinTextSize="20sp"
+
+    <ProgressBar
+        android:id="@+id/progessBar"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        style="?android:progressBarStyleHorizontal"
+        android:progress="80"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingPrefix" />
-
-    <Button
-        android:id="@+id/button_remove"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Remove"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="onClickRemove"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/button_append"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Append"
-        android:onClick="onClickAppend"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:progressDrawable="@drawable/circle"/>
 
+    <Button
+        android:id="@+id/button_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickMines"
+        android:text="Mines"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progessBar" />
+
+    <Button
+        android:id="@+id/button_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickPlus"
+        android:text="Plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progessBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
