@@ -38,6 +38,5 @@ public class MainActivity extends AppCompatActivity {
 //        TextView textView = snackView.findViewById(android.support.design.R.id.snackbar_text);
 //        textView.setTextColor(Color.YELLOW);
         snackbar.show();
-
     }
 }
