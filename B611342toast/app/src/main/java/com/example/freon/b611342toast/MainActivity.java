@@ -1,10 +1,12 @@
-package com.example.freon.b611352toast;
+package com.example.freon.b611342toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,8 +18,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickShow(View view) {
-        Toast toast = Toast.makeText(this, "This Toast", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 0);
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout,
+                (ViewGroup)findViewById(R.id.toast_root));
+
+
+        Toast toast = new Toast(this);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+
         toast.show();
     }
 }
