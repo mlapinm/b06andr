@@ -14,19 +14,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.boytronic_I_will_survive);
 
     }
 
     public void onClickPlay(View view) {
+        if(mediaPlayer == null){
+            mediaPlayer = MediaPlayer.create(this, R.raw.boytronic);
+        }
         mediaPlayer.start();
     }
 
     public void onClickPause(View view) {
-        mediaPlayer.pause();
+        if(mediaPlayer != null){
+            mediaPlayer.pause();
+        }
     }
 
     public void onClickStop(View view) {
-        mediaPlayer.stop();
+        stopPlayer();
+    }
+
+    private void stopPlayer() {
+        if(mediaPlayer != null){
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
+    @Override
+    public void finish() {
+        stopPlayer();
+        super.finish();
     }
 }
