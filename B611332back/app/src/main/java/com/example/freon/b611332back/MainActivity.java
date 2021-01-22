@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     long timePress;
+    Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +17,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(timePress + 2000 > 0){
+        if(timePress + 2000 > System.currentTimeMillis()){
+            toast.cancel();
             super.onBackPressed();
         }else {
-            timePress = 0;
-            Toast toast = Toast.makeText(this, "Pressed", Toast.LENGTH_SHORT);
-            toast.cancel();
+            timePress = System.currentTimeMillis();
+            toast = Toast.makeText(this, "Pressed", Toast.LENGTH_SHORT);
             toast.show();
         }
     }
