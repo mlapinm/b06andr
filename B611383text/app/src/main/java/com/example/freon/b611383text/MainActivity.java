@@ -1,10 +1,10 @@
-package com.example.freon.b611382text;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.freon.b611383text;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static final String[] COUNTRIES = new String[]{
