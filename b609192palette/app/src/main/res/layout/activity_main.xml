@@ -31,7 +31,7 @@
         android:layout_margin="4dp"
         android:text="Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text "
         android:textColor="@android:color/holo_red_light"
-        android:textSize="24sp" />
+        android:textSize="16sp" />
 
     <Button
         android:layout_width="wrap_content"
