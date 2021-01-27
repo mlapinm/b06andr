@@ -213,13 +213,32 @@ fun p13if(){
 
 //Part 14 – When
 fun p14when(){
+    val time = 14
+    val isSunday = true
 
+    val greeting = when {
+        isSunday -> "I'm gonna stay in bed all day!"
+        time < 5 -> "Why up so early?"
+        else -> " else "
+    }
+    println(greeting)
 }
+//I'm gonna stay in bed all day!
 
 //Part 15 – Function Parameters
 fun p15param(){
+    fun greet(name: String, reps: Int) {
+        var repsLeft = reps
 
+        while (repsLeft > 0) {
+            println("Hello, $name! Nice to meet you!")
+            repsLeft--
+        }
+    }
+        greet("Herbert", 2)
 }
+//Hello, Herbert! Nice to meet you!
+//Hello, Herbert! Nice to meet you!
 
 //Part 16 – Function Return Values
 fun p16return(){
@@ -282,7 +301,7 @@ fun p27(){
 
 fun main() {
 
-    when(14) {
+    when(15) {
         3 -> p03hello()
         4 -> p04variables()
         5 -> p05types()
