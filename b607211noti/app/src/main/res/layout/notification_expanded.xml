@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="256dp">
+
+    <TextView
+        android:id="@+id/textViewExpanded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is custom notification"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Compat.Notification" />
+
+    <ImageView
+        android:id="@+id/imageViewExpanded"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/apple" />
+
+</LinearLayout>
