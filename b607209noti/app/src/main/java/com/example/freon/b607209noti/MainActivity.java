@@ -1,15 +1,22 @@
 package com.example.freon.b607209noti;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -96,6 +103,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSendChannel1(View view) {
+        if (!notificationManager.areNotificationsEnabled()) {
+            openNotificationSettings();
+            return;
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O
+                && isChannelBlocked(CHANNEL_1_ID)){
+            openChannelSettings(CHANNEL_1_ID);
+            return;
+        }
+
         sendChannel1Notification(this);
     }
 
@@ -141,4 +159,34 @@ public class MainActivity extends AppCompatActivity {
         SystemClock.sleep(2000);
         notificationManager.notify(4, notificationSummary);
     }
+
+    private void openNotificationSettings() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Intent intent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
+            intent.putExtra(Settings.EXTRA_APP_PACKAGE, getOpPackageName());
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            intent.setData(Uri.parse("package:" + getOpPackageName()));
+            startActivity(intent);
+        }
+    }
+
+    @RequiresApi(26)
+    private boolean isChannelBlocked(String channelId) {
+        NotificationManager manager = getSystemService(NotificationManager.class);
+        NotificationChannel channel = manager.getNotificationChannel(channelId);
+
+        return channel != null && channel.getImportance() == NotificationManager.IMPORTANCE_NONE;
+    }
+
+    @RequiresApi(26)
+    private void openChannelSettings(String channelId) {
+        Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
+        intent.putExtra(Settings.EXTRA_APP_PACKAGE, getOpPackageName());
+        intent.putExtra(Settings.EXTRA_CHANNEL_ID, channelId);
+        startActivity(intent);
+    }
+
+
 }
