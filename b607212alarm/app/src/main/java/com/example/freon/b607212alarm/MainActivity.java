@@ -46,8 +46,6 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
 
         updateTimeText(calendar);
         startAlarm(calendar);
-
-
     }
 
     private void startAlarm(Calendar calendar) {
