@@ -322,12 +322,59 @@ fun p21const() {
 //Part 22 – What Are Classes/OOP?
 fun p22classes() {
 
+    class User(val name: String, var age: Int) {
+    }
+
+    val user1 = User("Hans", 30)
+
+    println("user name: ${user1.name}")
+    println("user age: ${user1.age}")
+
+    val user2 = User("Elfriede", 60)
+
+    println("user name: ${user2.name}")
+    println("user age: ${user2.age}")
+
+
 }
+//user name: Hans
+//user age: 30
+//user name: Elfriede
+//user age: 60
+
 
 //Part 23 – Simple Class
 fun p23class() {
+    class User(name: String = "No Name", var age: Int) {
+        init {
+            print("New user created. Age: $age,")
+        }
+
+        val name: String
+
+        init {
+            if (name.isBlank()) {
+                this.name = "No Name"
+            } else {
+                this.name = name.trim()
+            }
+
+            println(" Name: ${this.name}")
+        }
+    }
+
+    val user1 = User("   Hans   ", 30)
+    val user2 = User("  Elfriede   ", 60)
+    val user3 = User(age = 60)
+    val user4 = User("    ", 20)
+
 
 }
+//New user created. Age: 30, Name: Hans
+//New user created. Age: 60, Name: Elfriede
+//New user created. Age: 60, Name: No Name
+//New user created. Age: 20, Name: No Name
+
 
 //Part 24 – Init Blocks
 fun p24block() {
@@ -349,7 +396,7 @@ fun p27() {
 
 fun main() {
 
-    when (21) {
+    when (23) {
         3 -> p03hello()
         4 -> p04variables()
         5 -> p05types()
