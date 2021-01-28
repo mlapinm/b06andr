@@ -165,12 +165,12 @@
       <option name="presentableId" value="Default" />
       <updated>1611649573540</updated>
       <workItem from="1611649577308" duration="10771000" />
-      <workItem from="1611747644589" duration="1054000" />
+      <workItem from="1611747644589" duration="1104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11825000" />
+    <option name="totallyTimeSpent" value="11875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="32" width="1265" height="940" extended-state="0" />
@@ -185,7 +185,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32947233" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32947233" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />

@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, i);
         calendar.set(Calendar.MINUTE, i1);
+        calendar.set(Calendar.SECOND, 0);
 
         updateTimeText(calendar);
         startAlarm(calendar);
