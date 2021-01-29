@@ -44,11 +44,21 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         textView.setText("2");
+                        JSONArray jsonArray = null;
+                        try {
+                            jsonArray = response.getJSONArray("users");
+                            for (int i = 0 ; i < jsonArray.length(); i++){
+                                textView.append(String.valueOf(i));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
 
             }
         });
