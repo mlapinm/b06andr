@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButton(View view) {
 
-        String url = "https://jsonplaceholder.typicode.com/users";
+        String url = "https://api.androidhive.info/volley/person_object.json";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
@@ -46,11 +46,12 @@ public class MainActivity extends AppCompatActivity {
                         textView.setText("2");
                         JSONArray jsonArray = null;
                         try {
-                            jsonArray = response.getJSONArray("users");
-                            for (int i = 0 ; i < jsonArray.length(); i++){
-                                textView.append(String.valueOf(i));
-                            }
-                        } catch (JSONException e) {
+                            textView.setText(response.toString());
+//                            jsonArray = response.getJSONArray("");
+//                            for (int i = 0 ; i < jsonArray.length(); i++){
+//                                textView.append(String.valueOf(i));
+//                            }
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
 
