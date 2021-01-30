@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -19,37 +20,55 @@
         android:id="@+id/robot"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:onClick="swapView"
+        android:src="@drawable/ic_robot"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/audio"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:onClick="swapView"
+        android:src="@drawable/ic_audio"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/robot" />
 
     <ImageView
         android:id="@+id/palette"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginStart="44dp"
+        android:onClick="swapView"
+        android:src="@drawable/ic_palette"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/audio" />
 
     <ImageView
         android:id="@+id/heart"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginStart="44dp"
+        android:onClick="swapView"
+        android:src="@drawable/ic_heart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/palette" />
+
+    <ImageView
+        android:id="@+id/happy"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:onClick="swapView"
+        android:src="@drawable/ic_happy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/heart" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
