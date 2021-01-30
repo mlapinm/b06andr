@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements LittleAdapter.OnI
                                 String creator = hit.getString("user");
                                 String imageUrl = "";
                                 imageUrl = hit.getString("webformatURL");
-                                imageUrl = hit.getString("previewURL");
+//                                imageUrl = hit.getString("previewURL");
                                 int likes = hit.getInt("likes");
                                 items.add(new LittleItem(
                                         imageUrl,
