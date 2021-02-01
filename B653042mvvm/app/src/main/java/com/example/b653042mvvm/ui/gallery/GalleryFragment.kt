@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.b653042mvvm.R
+
 import com.example.b653042mvvm.ui.gallery.GalleryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
-@AndroidEntryPoint
+
 class GalleryFragment: Fragment(R.layout.fragment_gallery) {
     private val viewModel by viewModel<GalleryViewModel>()
 
