@@ -199,6 +199,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onSet(View view) {
+        String input = editTextInput.getText().toString().trim();
+        if(input.length()==0){
+            return;
+        }
+        long millisInput = Long.parseLong(input) * 60000;
+        if(millisInput == 0){
+            return;
+        }
 
+        timeLeftInMillis = millisInput;
+        updateCountDownText();
     }
 }
