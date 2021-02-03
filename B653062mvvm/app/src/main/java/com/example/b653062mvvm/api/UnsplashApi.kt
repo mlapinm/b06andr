@@ -1,8 +1,7 @@
-package com.example.b653072mvvm.data
+package com.example.b653062mvvm.api
 
 
-import com.example.b653072mvvm.BuildConfig
-import com.example.b653072mvvm.api.UnsplashResponse
+import com.example.b653062mvvm.BuildConfig
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query

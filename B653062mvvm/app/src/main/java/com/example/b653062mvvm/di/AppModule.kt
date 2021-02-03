@@ -1,6 +1,6 @@
 package com.example.b653062mvvm.di
 
-import com.example.b653062mvvm.data.UnsplashApi
+import com.example.b653062mvvm.api.UnsplashApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
