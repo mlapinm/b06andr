@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class LittleBroadcastReceiver2 extends BroadcastReceiver {
+public class OrderedReceiver2 extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         int resultCode = getResultCode();
@@ -15,7 +15,7 @@ public class LittleBroadcastReceiver2 extends BroadcastReceiver {
         String stringExtra = resultExtras.getString("stringExtra");
 
         resultCode++;
-        stringExtra += " ->OR2 ";
+        stringExtra += "->OR2";
 
         String toastText = "OR2\n"
                 + "resultCode: " + resultCode + "\n"
