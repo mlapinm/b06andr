@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.example.b609252imag"
+        applicationId "com.example.freon.b609254imag"
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
