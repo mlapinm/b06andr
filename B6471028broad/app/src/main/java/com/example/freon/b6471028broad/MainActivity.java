@@ -1,4 +1,4 @@
-package com.example.freon.b6470725broad;
+package com.example.freon.b6471028broad;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         unregisterReceiver(orderedReceiver1);
     }
 }
