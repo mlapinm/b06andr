@@ -10,7 +10,6 @@ public class LittleJobService extends JobService {
 
     @Override
     public boolean onStartJob(JobParameters jobParameters) {
-        Log.d(TAG, "");
         Log.d(TAG, "onStartJob");
         doBackgroundWork(jobParameters);
 
@@ -26,19 +25,16 @@ public class LittleJobService extends JobService {
                     if (jobCanceled){
                         return;
                     }
-
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
-                    Log.d(TAG, "Job finished");
-                    jobFinished(jobParameters, false);
                 }
+                Log.d(TAG, "Job finished");
+                jobFinished(jobParameters, false);
             }
         }).start();
-
     }
 
     @Override
