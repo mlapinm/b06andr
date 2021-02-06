@@ -6,26 +6,18 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Input1"
-        android:textSize="24dp" />
+    tools:context="com.codinginflow.jobschedulerexample.MainActivity">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onEncqueueWork"
-        android:text="Enqueue Work" />
+        android:onClick="scheduleJob"
+        android:text="Schedule Job" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onStop"
-        android:text="Strop Service" />
-
+        android:onClick="cancelJob"
+        android:text="Cancel Job" />
 
 </LinearLayout>

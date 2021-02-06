@@ -10,6 +10,7 @@ import androidx.core.app.JobIntentService;
 
 public class LittleJobIntentService extends JobIntentService {
     public static final String TAG = "LittleJobIntentService";
+    public boolean running = true;
 
     static void enqueueWork(Context context, Intent work){
         enqueueWork(context, LittleJobIntentService.class, 123, work);
