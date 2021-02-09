@@ -6,13 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.b613312p12dagger.car.Car;
 import com.example.b613312p12dagger.dagger.ActivityComponent;
-import com.example.b613312p12dagger.dagger.DaggerActivityComponent;
+//import com.example.b613312p12dagger.dagger.DaggerActivityComponent;
+import com.example.b613312p12dagger.dagger.DieselEngineModule;
 
 import javax.inject.Inject;
-
-//import com.example.b613302p11dagger.dagger.CarComponent;
-//import com.example.b613302p11dagger.dagger.DaggerCarComponent;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,25 +21,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        CarComponent component = DaggerCarComponent.builder()
-
-
 //        ActivityComponent component = DaggerActivityComponent.builder()
-//                .horsePower(150)
+//                .horsePower(120)
 //                .engineCapacity(1400)
-//                .appComponent(((LittleApp)getApplication()).getAppComponent())
+//                .appComponent(((LittleApp) getApplication()).getAppComponent())
 //                .build();
 
-        ActivityComponent component = DaggerActivityComponent.builder()
-                .horsePower(120)
-                .engineCapacity(1400)
-                .appComponent(((LittleApp) getApplication()).getAppComponent())
-                .build();
 
-
-//        ActivityComponent component = DaggerActivityComponent.builer().build();
-
-
+        ActivityComponent component = ((LittleApp)getApplication())
+                .getAppComponent()
+                .getActivityComponent(
+                        new DieselEngineModule(120)
+                );
 
         component.inject(this);
 
